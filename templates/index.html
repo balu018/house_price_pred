@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>House Price Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='css/main.css') }}">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div class="register_page">
+        <div class="form">
+            <form action="{{url_for('predict')}}" method="POST">
+                Lot area: <input type="number" required name='lot_area' placeholder="Enter the LotArea"><br>
+                
+                Overall quality:
+                    <select required name="overall_quality">
+                        <option value="">Select</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                <br>
+                Year Built: <input type="number" min="1915" max="2009" required name='yr_built' placeholder="Enter Year Of Build"><br>
+                
+                
+            
+                Living area: <input type="number" required name='living_area' placeholder="Enter Living Area"><br>
+                No of bed rooms: <input type="number" required name='bed_rooms' placeholder="Enter No Of Bedrooms"><br>
+                
+                <input type="submit" value="predict" class="submit">
+            </form>
+            <p> House Price is: ${{data}}</p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
